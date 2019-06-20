@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:700" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <title>Frontend Mentor | Beta sign up split layout Challenge</title>
@@ -15,40 +15,53 @@
 
 <body>
 
-  <head class="presentation">
-    <nav>
-      <div class="presentation__nav nav">
-        <div class="nav__logo">
+  <main class="body__container">
+
+    <!-- <div class="bar bar-grid">
+        <div class="bar__logo">
           <img src="images/logo.svg" alt="logo">
         </div>
-        <div class="nav__contact-icons">
+        <div class="bar__contact-icons">
           <i class="fab fa-twitter"></i>
           <i class="fab fa-facebook"></i>
           <i class="fas fa-envelope"></i>
         </div>
-      </div>
-    </nav>
-    <img src="images/illustration-main.svg" alt="Main ilustration" class="presentation__img">
-  </head>
+      </div> -->
 
-  <main class="main-content">
-    <section class="main-content__persentation-text presentation-text">
-      <h1 class="presentation-text__service-goal">
-        All your files in one secure location, accessible anywhere
-      </h1>
-      <p class="ppresentation-text__service-explanation">
-        Fylo stores all your most important files in one secure location.<br>
-        Access them wherever your need, share and collaborate with friends, family and co-workers.
-      </p>
-    </section>
-    <section class="main-content__registry">
-      <h4>Sign up for early access</h4>
-    </section>
+    <div class="inner">
+      <section class="inner__ilustration ilustration">
+        <img src="images/illustration-main.svg" alt="Main ilustration">
+      </section>
+
+      <section class="inner__relevant-content relevant-content">
+        <section class="main-content">
+          <section class="main-content__presentation-text">
+            <h1 class="main-content__service-goal">
+              All your files in one secure location, accessible anywhere.
+            </h1>
+            <p class="main-content__service-explanation">
+              Fylo stores all your most important files in one secure location.
+              Access them wherever your need, share and collaborate with friends, family and co-workers.
+            </p>
+          </section>
+
+          <section class="main-content__registry-form">
+            <h4 class="text">Sign up for early access</h4>
+            <form class="registry-form">
+              <input class="input-email" type="text" name="email">
+              <button class="btn-submit" type="submit">Sign Up</button>
+            </form>
+          </section>
+        </section>
+
+        <footer class="footer">
+          <a href="http://" class="policy">Privacy Policy</a>
+        </footer>
+      </section>
+    </div>
+
   </main>
 
-  <footer class="footer">
-    <a href="http://">Privacy Policy</a>
-  </footer>
 </body>
 
 </html>
