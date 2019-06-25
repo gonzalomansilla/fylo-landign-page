@@ -5,9 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:700" rel="stylesheet">
+
   <link rel="stylesheet" href="css/styles.css">
   <title>Frontend Mentor | Beta sign up split layout Challenge</title>
 
@@ -18,13 +20,14 @@
   <main class="body__container">
 
     <div class="inner">
-      <div class="bar bar-grid">
+
+      <div class="inner_bar bar">
         <div class="bar__logo">
           <img src="images/logo.svg" alt="logo">
         </div>
         <div class="bar__contact-icons">
           <i class="fab fa-twitter"></i>
-          <i class="fab fa-facebook"></i>
+          <i class="fab fa-facebook-f"></i>
           <i class="fas fa-envelope"></i>
         </div>
       </div>
@@ -33,26 +36,26 @@
         <img src="images/illustration-main.svg" alt="Main ilustration">
       </section>
 
-      <section class="inner__relevant-content relevant-content">
-        <section class="main-content">
-          <section class="main-content__presentation-text">
-            <h1 class="main-content__service-goal">
+      <section class="inner__product product">
+        <main class="product__main-content">
+          <section class="product__main-text">
+            <h1 class="product__headline">
               All your files in one secure location, accessible anywhere.
             </h1>
-            <p class="main-content__service-explanation">
+            <p class="product__service-description">
               Fylo stores all your most important files in one secure location.
               Access them wherever your need, share and collaborate with friends, family and co-workers.
             </p>
           </section>
 
-          <section class="main-content__registry-form">
-            <h4 class="text">Sign up for early access</h4>
+          <section class="signup">
+            <h4 class="signup__text">Sign up for early access</h4>
             <form class="registry-form">
-              <input class="input-email" type="text" name="email">
-              <button class="btn-submit" type="submit">Sign Up</button>
+              <input class="registry-form__email" type="text" name="email">
+              <button class="registry-form__btn-submit" type="submit">Sign Up</button>
             </form>
           </section>
-        </section>
+        </main>
 
         <footer class="footer">
           <a href="http://" class="policy">Privacy Policy</a>

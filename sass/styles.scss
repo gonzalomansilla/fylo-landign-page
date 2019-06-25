@@ -26,7 +26,7 @@ body {
     font-size: 16px;
     font-family: $font-open_sans;
     font-weight: $fw-regular;
-    background-image: linear-gradient(175deg, hsl(242, 44%, 50%) 0%, hsl(242, 54%, 43%) 100%);
+    background-image: linear-gradient(45deg, hsl(244, 75%, 17%) 0%, hsl(244, 45%, 60%) 100%);
     background-repeat: no-repeat;
 
     & button {
@@ -45,28 +45,41 @@ body {
     box-shadow: 0px 0px 8px 2px hsla(242, 55%, 24%, 0.45);
 }
 
-.bar {
+.inner_bar {
     grid-column: 5 / -1;
     grid-row: 1 / 2;
     z-index: 2;
     margin: 48px 40px 0;
-    background-color: rgba(0, 0, 255, 0.26);
 }
 
-.bar-grid {
+.bar {
     display: grid;
     grid-template-columns: max-content 1fr max-content;
     grid-template-areas: "logo . social-icons";
-    grid-auto-flow: row;
+    grid-gap: 8px;
 }
 
 .bar__logo {
     grid-area: logo;
+
+    & img {
+        width: 100px;
+    }
 }
 
 .bar__contact-icons {
     grid-area: social-icons;
-    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 32px;
+    justify-items: center;
+    color: $primary-color;
+    //Pequeño centralizado de iconos
+    padding-top: 6px;
+
+    & i {
+        font-size: 1.4rem;
+    }
 }
 
 .inner {
@@ -88,6 +101,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100% 145%;
     transform: scaleX(-1);
+    margin-right: -1px;
 }
 
 .ilustration {
@@ -99,86 +113,86 @@ body {
         width: 60%;
         height: auto;
         transform: scaleX(-1);
-
     }
 
 }
 
-/*****       *****/
-
-.inner__relevant-content {
-    z-index: 1;
-    padding: 48px 40px;
+.inner__product {
     grid-column: span 5 / -1;
     grid-row: 1 / -1;
+    margin: 48px 40px;
 }
 
-.relevant-content {
-    //Buscar mejor manera de representar los dos elemenos(main-content y footer)
+.product {
     display: grid;
-    grid-template-rows: 1fr 16px;
+    grid-template-rows: 1fr max-content;
+    grid-template-areas:
+        "product_descript"
+        "policy";
 }
 
-.main-content {
+.product__main-content {
+    grid-area: product_descript;
     grid-row: 1 / -1;
+
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    height: 100%;
-    grid-gap: 32px;
-    padding-top: 16px; //centrado del contenido
+    grid-gap: 48px;
 }
 
-.main-content__presentation-text {
+.product__main-text {
+    align-self: end;
     display: grid;
     grid-template-rows: repeat(2, max-content);
-    grid-gap: 12px;
+    grid-gap: 32px;
 }
 
-.main-content__service-goal {
+.product__headline {
+    min-width: 236px;
+    font-size: 1.6rem;
     font-family: $font-raleway;
-    font-size: 1.40rem;
     font-weight: $fw-bold;
     color: $primary-color;
 }
 
-.main-content__service-explanation {
+.product__service-description {
     color: $neutral-color;
-    font-size: .65rem; //Variable
+    font-size: .8rem;
     font-weight: $fw-regular;
 }
 
-.main-content__registry-form {
+.signup {
 
-
-    & .text {
+    & .signup__text {
         margin-bottom: 16px;
         font-family: $font-raleway;
-        font-size: .8rem; //Variable
-        font-weight: $fw-bold;
+        font-size: 1rem;
+        font-weight: $fw-regular;
         color: $primary-color;
     }
 }
 
 .registry-form {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-auto-rows: 40px;
-    grid-column-gap: 16px;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 16px;
 
-    & .input-email {
-        width: 100%;
+    & .registry-form__email {
+        grid-column: 1 / span 5;
+        height: 48px;
         border: none;
-        box-shadow: 0px 0px 2px 1px rgba(128, 128, 128, 0.35);
+        box-shadow: 3px 3px 4px 1px rgba(128, 128, 128, 0.25);
         border-radius: 4px;
     }
 
-    & .btn-submit {
-        min-width: 56px;
-        max-width: 114px;
+    & .registry-form__btn-submit {
+        grid-column: 6 / -1;
+        height: 48px;
+        min-width: 64px;
         border: none;
         border-radius: 2.5px;
         box-shadow: 1.5px 1.8px 4px 2px rgba(94, 94, 94, 0.22);
+        font-size: .85rem;
         font-family: $font-open_sans;
         font-weight: $fw-bold;
         background-color: $accent-color;
@@ -186,30 +200,67 @@ body {
     }
 }
 
-//Letra un poco mas chica y oscura
 .footer {
+    grid-area: policy;
     display: flex;
     justify-content: right;
     align-items: flex-end;
 
     & .policy {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+        color: $primary-color;
     }
 }
 
 @media (max-width: 420px) {
+
     .body__container {
         //Necesario: solo para la presentacion en mobile
         height: auto;
     }
 
-    .inner {
-        // grid
+    .bar {
+        grid-column: 1 / -1;
+        margin-top: 36px;
+        position: relative;
+    }
+
+    .bar__logo {
+        & img {
+            visibility: hidden;
+        }
+
+
+    }
+
+    .bar__logo::after {
+        position: absolute;
+        content: "";
+        width: 95px;
+        height: 30px;
+        left: 0;
+        top: 0;
+        background-image: url(/images/logo-white.svg);
+        background-size: 90%;
+        background-repeat: no-repeat;
+    }
+
+    .bar__contact-icons {
+        grid-gap: 21px;
+        color: white;
+
+        & i {
+            font-size: 0.95rem;
+        }
     }
 
     .inner__ilustration {
         grid-column: 1 / -1;
         grid-row: 1 / span 5;
+    }
+
+    .bg-ilustration {
+        background: linear-gradient(to left bottom, $bg-color1, $bg-color2);
     }
 
     .ilustration {
@@ -218,47 +269,52 @@ body {
 
         & img {
             transform: scaleX(1);
-            width: 65%;
-
+            width: 60%;
         }
     }
 
-    .inner__relevant-content {
+    .inner__product {
         grid-column: 1 / -1;
         grid-row: span 4;
-
-        padding: 0px 40px 36px;
+        margin: 0px 40px 36px;
     }
 
-    .main-content {
-        padding-top: 0; //centrado del contenido
-
-    }
-
-    .relevant-content {
+    .product {
         grid-gap: 32px;
-
     }
 
-    .bar {
-        grid-column: 1 / -1;
-        margin-top: 36px;
-
+    .product__main-content {
+        grid-row: 1 / 2;
+        grid-template-rows: 1fr auto;
+        grid-row-gap: 32px;
     }
 
-    .bg-ilustration {
-        background: none;
-        background: linear-gradient(to left bottom, $bg-color1, $bg-color2);
+    .product__main-text {
+        grid-row-gap: 16px;
+    }
+
+    .signup__text {
+        font-size: 0.8rem;
+    }
+
+    .product__service-description {
+        font-size: 0.65rem;
     }
 
     .registry-form {
-        grid-template-columns: 3fr 1fr;
-        grid-auto-rows: 40px;
+        grid-auto-rows: 32px;
 
+        & .registry-form__email {
+            grid-column: span 7;
+            height: 32px;
+            box-shadow: 0px 0px 2px 1px rgba(128, 128, 128, 0.25);
+        }
 
-        & .input-email {
-            box-shadow: 1.5px 1.8px 2px 1px rgba(128, 128, 128, 0.25);
-
+        & .registry-form__btn-submit {
+            grid-column: 1 / span 2;
+            width: 128px;
+            height: 32px;
         }
     }
+
 }
