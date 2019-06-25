@@ -26,7 +26,7 @@ body {
     font-size: 16px;
     font-family: $font-open_sans;
     font-weight: $fw-regular;
-    background-image: linear-gradient(300deg, hsl(242, 55%, 33%) 0%, hsl(242, 54%, 43%) 100%);
+    background-image: linear-gradient(175deg, hsl(242, 44%, 50%) 0%, hsl(242, 54%, 43%) 100%);
     background-repeat: no-repeat;
 
     & button {
@@ -42,17 +42,15 @@ body {
     overflow: hidden;
     border-radius: 5px;
     background-color: #fff;
-    box-shadow: 4px 4px 8px 2px hsl(242, 55%, 24%);
-
+    box-shadow: 0px 0px 8px 2px hsla(242, 55%, 24%, 0.45);
 }
 
 .bar {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    padding: 32px;
-    background-color: transparent;
+    grid-column: 5 / -1;
+    grid-row: 1 / 2;
+    z-index: 2;
+    margin: 48px 40px 0;
+    background-color: rgba(0, 0, 255, 0.26);
 }
 
 .bar-grid {
@@ -64,10 +62,6 @@ body {
 
 .bar__logo {
     grid-area: logo;
-
-    & img {
-        // color: white;
-    }
 }
 
 .bar__contact-icons {
@@ -83,17 +77,17 @@ body {
 }
 
 .inner__ilustration {
-    grid-column: span 4;
+    z-index: 1;
+    grid-column: 1 / span 4;
     grid-row: 1 / -1;
 
 }
 
 .ilustration {
-    background: url(/images/bg-intro.svg);
+    background: url(../images/bg-intro.svg);
     background-repeat: no-repeat;
     background-size: 100% 145%;
     transform: scaleX(-1);
-    // border-radius: 0 5px 5px 0;
 }
 
 .ilustration {
@@ -102,7 +96,7 @@ body {
     align-items: center;
 
     & img {
-        width: 65%;
+        width: 60%;
         height: auto;
         transform: scaleX(-1);
 
@@ -113,23 +107,25 @@ body {
 /*****       *****/
 
 .inner__relevant-content {
-    padding: 48px;
-    grid-column: span 5;
+    z-index: 1;
+    padding: 48px 40px;
+    grid-column: span 5 / -1;
     grid-row: 1 / -1;
 }
 
 .relevant-content {
+    //Buscar mejor manera de representar los dos elemenos(main-content y footer)
     display: grid;
     grid-template-rows: 1fr 16px;
 }
 
 .main-content {
+    grid-row: 1 / -1;
     display: grid;
-    grid-template-rows: repeat(2, max-content);
-    align-content: center;
+    grid-template-rows: repeat(2, 1fr);
     height: 100%;
-    padding-top: 16px; //centrado del contenido
     grid-gap: 32px;
+    padding-top: 16px; //centrado del contenido
 }
 
 .main-content__presentation-text {
@@ -147,17 +143,17 @@ body {
 
 .main-content__service-explanation {
     color: $neutral-color;
-    font-size: .65rem;
+    font-size: .65rem; //Variable
     font-weight: $fw-regular;
 }
 
 .main-content__registry-form {
-    //CONTINUAR ACA *********************************
+
 
     & .text {
         margin-bottom: 16px;
         font-family: $font-raleway;
-        font-size: .8rem;
+        font-size: .8rem; //Variable
         font-weight: $fw-bold;
         color: $primary-color;
     }
@@ -165,28 +161,28 @@ body {
 
 .registry-form {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-rows: 32px;
-    grid-gap: 16px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-rows: 40px;
+    grid-column-gap: 16px;
 
     & .input-email {
-        height: inherit;
+        width: 100%;
         border: none;
         box-shadow: 0px 0px 2px 1px rgba(128, 128, 128, 0.35);
         border-radius: 4px;
     }
 
     & .btn-submit {
-        min-width: 50px;
+        min-width: 56px;
         max-width: 114px;
-        height: inherit;
         border: none;
         border-radius: 2.5px;
         box-shadow: 1.5px 1.8px 4px 2px rgba(94, 94, 94, 0.22);
-        background-color: $accent-color;
-        color: white;
         font-family: $font-open_sans;
         font-weight: $fw-bold;
+        background-color: $accent-color;
+        color: white;
     }
 }
 
@@ -213,7 +209,7 @@ body {
 
     .inner__ilustration {
         grid-column: 1 / -1;
-        grid-row: span 5;
+        grid-row: 1 / span 5;
     }
 
     .ilustration {
@@ -222,7 +218,7 @@ body {
 
         & img {
             transform: scaleX(1);
-            width: 80%;
+            width: 65%;
 
         }
     }
@@ -234,28 +230,35 @@ body {
         padding: 0px 40px 36px;
     }
 
+    .main-content {
+        padding-top: 0; //centrado del contenido
+
+    }
+
     .relevant-content {
         grid-gap: 32px;
 
     }
 
-    // .bar {
-    //     width: 50%;
-    // }
+    .bar {
+        grid-column: 1 / -1;
+        margin-top: 36px;
 
-    // .bg-ilustration {
-    //     background: none;
-    //     background: linear-gradient(to left bottom, $bg-color1, $bg-color2);
-    // }
+    }
 
-    // .registry-form {
-    //     grid-template-columns: 3fr 1fr;
-    //     grid-auto-rows: 40px;
+    .bg-ilustration {
+        background: none;
+        background: linear-gradient(to left bottom, $bg-color1, $bg-color2);
+    }
+
+    .registry-form {
+        grid-template-columns: 3fr 1fr;
+        grid-auto-rows: 40px;
 
 
-    //     & .input-email {
-    //         box-shadow: 1.5px 1.8px 2px 1px rgba(128, 128, 128, 0.25);
+        & .input-email {
+            box-shadow: 1.5px 1.8px 2px 1px rgba(128, 128, 128, 0.25);
 
-    //     }
-    // }
+        }
+    }
 }
