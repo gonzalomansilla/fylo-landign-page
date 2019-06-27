@@ -5,10 +5,10 @@
 }
 
 body {
+  height: max-content;
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
-  background-image: linear-gradient(45deg, #0f0b4c 0%, #716bc7 100%);
   background-repeat: no-repeat;
 }
 body button {
@@ -21,9 +21,9 @@ body button {
   height: calc(.95 * 100vh);
   margin: 18px auto;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: #fff;
-  box-shadow: 0px 0px 8px 2px rgba(30, 28, 95, 0.45);
+  box-shadow: 0px 0px 6px 2px rgba(61, 61, 61, 0.45);
 }
 
 .inner_bar {
@@ -74,7 +74,7 @@ body button {
 }
 
 .ilustration {
-  background: url(../images/bg-intro.svg);
+  background-image: url(../images/bg-intro.svg);
   background-repeat: no-repeat;
   background-size: 100% 145%;
   transform: scaleX(-1);
@@ -94,8 +94,8 @@ body button {
 
 .inner__product {
   grid-column: span 5/-1;
-  grid-row: 1/-1;
-  margin: 48px 40px;
+  grid-row: 2/-1;
+  margin: 16px 40px 48px;
 }
 
 .product {
@@ -200,7 +200,7 @@ body button {
     height: 30px;
     left: 0;
     top: 0;
-    background-image: url(/images/logo-white.svg);
+    background-image: url(../images/logo-white.svg);
     background-size: 90%;
     background-repeat: no-repeat;
   }

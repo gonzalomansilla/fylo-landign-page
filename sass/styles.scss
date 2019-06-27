@@ -23,10 +23,11 @@ $fw-regular: 400;
 }
 
 body {
+    height: max-content;
     font-size: 16px;
     font-family: $font-open_sans;
     font-weight: $fw-regular;
-    background-image: linear-gradient(45deg, hsl(244, 75%, 17%) 0%, hsl(244, 45%, 60%) 100%);
+    // background: linear-gradient(45deg, hsl(244, 75%, 17%) 0%, hsl(244, 45%, 60%) 100%);
     background-repeat: no-repeat;
 
     & button {
@@ -40,9 +41,9 @@ body {
     height: calc(.95 * 100vh);
     margin: 18px auto;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: #fff;
-    box-shadow: 0px 0px 8px 2px hsla(242, 55%, 24%, 0.45);
+    box-shadow: 0px 0px 6px 2px hsla(242, 0%, 24%, 0.45);
 }
 
 .inner_bar {
@@ -97,7 +98,7 @@ body {
 }
 
 .ilustration {
-    background: url(../images/bg-intro.svg);
+    background-image: url(../images/bg-intro.svg);
     background-repeat: no-repeat;
     background-size: 100% 145%;
     transform: scaleX(-1);
@@ -119,8 +120,8 @@ body {
 
 .inner__product {
     grid-column: span 5 / -1;
-    grid-row: 1 / -1;
-    margin: 48px 40px;
+    grid-row: 2 / -1;
+    margin: 16px 40px 48px;
 }
 
 .product {
@@ -240,7 +241,7 @@ body {
         height: 30px;
         left: 0;
         top: 0;
-        background-image: url(/images/logo-white.svg);
+        background-image: url(../images/logo-white.svg);
         background-size: 90%;
         background-repeat: no-repeat;
     }
