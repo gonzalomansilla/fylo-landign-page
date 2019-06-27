@@ -1,6 +1,7 @@
 # Desafio n°1 (Beta sign up split layout) de [Frontend Mentor](https://www.frontendmentor.io)
 Teniendo solo el diseño de la página tanto en Mobile y Desktop, se los deben maquetar lo más fiel posible.
-Principalmente se utilizan **HTML** y **CSS**, aveces **JS** dependiendo la complejidad y/o interactividad que se requiere. 
+Principalmente se utilizan **HTML** y **CSS**, aveces **JS** dependiendo la complejidad y/o interactividad que se requiere.
+[Demo](https://newtongrav.github.io/fylo-landign-page/)
 
 ![Header/intro section for the Beta sign up split layout](./design/desktop-preview.jpg)
 
